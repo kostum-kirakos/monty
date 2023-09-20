@@ -56,7 +56,8 @@ int main(int argc, char *argv[])
 				operation[i].f(&top, line_number); }
 	}
 	fclose(file_to_open);
-	free(line);
+	if (line)
+		free(line);
 	free_stack(top);
 	return (EXIT_SUCCESS);
 }
