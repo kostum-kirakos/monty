@@ -57,5 +57,6 @@ int main(int argc, char *argv[])
 			if (strcmp(part, operation[i].opcode) == 0)
 				operation[i].f(&top, line_number); }
 	}
+	free(line);
 	return (EXIT_SUCCESS);
 }
