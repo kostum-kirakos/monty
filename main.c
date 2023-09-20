@@ -28,6 +28,8 @@ int main(int argc, char *argv[])
 	instruction_t operation[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 
