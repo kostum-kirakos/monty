@@ -43,7 +43,7 @@ void push(stack_t **head, unsigned int line_number)
 	} else
 	{
 		new_node->next = *head;
-		(*head)->prev = new_node;
+	(*head)->prev = new_node;
 		*head = new_node;
 	}
 }
@@ -84,10 +84,31 @@ int isValidNumber(const char *str)
 		while (*str)
 		{
 			if ((*str < '0' || *str > '9') && *str != '-')
-				return (0);
+			return (0);
 			str++;
 		}
 		return (1);
 	}
 	return (0);
+}
+
+
+/**
+ * free_stack - Frees a stack_t stack.
+ *
+ * @head: Pointer to the top of the stack.
+ *
+ * Description: This function frees a stack_t stack.
+ */
+
+void free_stack(stack_t *head)
+{
+	stack_t *temp;
+
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
 }

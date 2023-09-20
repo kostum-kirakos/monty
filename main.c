@@ -38,11 +38,8 @@ int main(int argc, char *argv[])
 	}
 
 	file_to_open = fopen(argv[1], "r");
-	if (file_to_open == NULL)
-	{
-		fprintf(stderr, "Error: can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+	check_file(file_to_open);
+
 	while ((read = getline(&line, &len_line, file_to_open)) != -1)
 	{
 		line_number++;
@@ -57,6 +54,26 @@ int main(int argc, char *argv[])
 			if (strcmp(part, operation[i].opcode) == 0)
 				operation[i].f(&top, line_number); }
 	}
+	fclose(file_to_open);
 	free(line);
+	free_stack(top);
 	return (EXIT_SUCCESS);
+}
+
+
+/**
+ * check_file - Check if the file can be opened.
+ *
+ * @file: File to check.
+ *
+ * Description: This function checks if the file can be opened.
+ */
+
+void check_file(FILE *file)
+{
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file <file>\n");
+		exit(EXIT_FAILURE);
+	}
 }
