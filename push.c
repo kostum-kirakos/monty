@@ -94,6 +94,24 @@ int isValidNumber(const char *str)
 
 
 /**
+ * check_file - Check if the file can be opened.
+ *
+ * @file: File to check.
+ *
+ * Description: This function checks if the file can be opened.
+ */
+
+void check_file(FILE *file)
+{
+	if (file == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file <file>\n");
+		exit(EXIT_FAILURE);
+	}
+}
+
+
+/**
  * free_stack - Frees a stack_t stack.
  *
  * @head: Pointer to the top of the stack.

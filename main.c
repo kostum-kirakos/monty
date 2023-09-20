@@ -59,21 +59,3 @@ int main(int argc, char *argv[])
 	free_stack(top);
 	return (EXIT_SUCCESS);
 }
-
-
-/**
- * check_file - Check if the file can be opened.
- *
- * @file: File to check.
- *
- * Description: This function checks if the file can be opened.
- */
-
-void check_file(FILE *file)
-{
-	if (file == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file <file>\n");
-		exit(EXIT_FAILURE);
-	}
-}
