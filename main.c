@@ -18,7 +18,7 @@
 int main(int argc, char *argv[])
 {
 	FILE *file_to_open;
-	char *part = NULL, char *line = NULL;
+	char *part = NULL, *line = NULL;
 	int i;
 	unsigned int line_number = 0;
 	stack_t *top = NULL;
@@ -57,4 +57,5 @@ int main(int argc, char *argv[])
 			if (strcmp(part, operation[i].opcode) == 0)
 				operation[i].f(&top, line_number); }
 	}
+	return (EXIT_SUCCESS);
 }

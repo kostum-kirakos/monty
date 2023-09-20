@@ -13,11 +13,10 @@ void push(stack_t **head, unsigned int line_number)
 {
 	stack_t *new_node;
 	char *the_num;
-	(void)line_number;
 	int num;
 
+	(void)line_number;
 	new_node = malloc(sizeof(stack_t));
-
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
