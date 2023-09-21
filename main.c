@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		}
 		if (!find)
 		{
-fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			fclose(file_to_open);
 			return (1); }
 	}
@@ -87,7 +87,7 @@ void check_args_error(int argc)
 
 
 /**
- * check_openfile_erro - Check if the file can be opened.
+ * check_openfile_error - Check if the file can be opened.
  * @file_to_open: File to open.
  * @argv: Array of argument strings.
  * Return: Nothing.
