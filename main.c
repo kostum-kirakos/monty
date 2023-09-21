@@ -8,8 +8,10 @@ instruction_t instructions[] = {
 	{"pall", pall},
 	{"pint", pint},
 	{"nop", nop},
+	{"div", div},
 	{"sub", sub},
-	{NULL, NULL}};
+	{NULL, NULL}
+};
 
 /**
  * main - Entry point of the Monty interpreter.
