@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 0;
 	char *opcode;
 	instruction_t *command;
+	int find;
 
 
 	if (argc != 2)
@@ -45,13 +46,22 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || opcode[0] == '#')
 			continue; /* Skip empty lines and comments */
 
+		find = 0;
+
 		for (command = instructions; command->opcode != NULL; command++)
 		{
 			if (strcmp(opcode, command->opcode) == 0)
 			{
 				command->f(&stack, line_number);
+				find = 1;
 				break;
 			}
+		}
+		if (!find)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+			fclose(file_to_open);
+			return (1);
 		}
 	}
 
