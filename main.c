@@ -5,11 +5,11 @@ instruction_t instructions[] = {
 	{"swap", swap},
 	{"pop", pop},
 	{"push", push},
+	{"div", div},
 	{"pall", pall},
 	{"pint", pint},
 	{"nop", nop},
 	{"sub", sub},
-	{"div", div},
 	{NULL, NULL}};
 
 /**
