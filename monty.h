@@ -1,16 +1,13 @@
-#ifndef _MONTY_H_
-#define _MONTY_H_
-
-#define _POSIX_C_SOURCE 200809L
-#define _GNU_SOURCE
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
-#include <unistd.h>
-#include <ctype.h>
 
+struct stack_s;
+
+/* Stack structure definition */
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -22,12 +19,12 @@
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
-
+/* Instruction structure definition */
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -38,18 +35,12 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+    char *opcode;
+    void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **head, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
-int isValidNumber(const char *str);
-void free_stack(stack_t *head);
-void check_file(FILE *file);
+void push(struct stack_s **stack, unsigned int line_number);
+void pall(struct stack_s **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 
-
-
-
-#endif /* _MONTY_H_ */
+#endif /* MONTY_H */
