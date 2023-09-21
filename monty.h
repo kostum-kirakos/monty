@@ -42,6 +42,7 @@ typedef struct instruction_s
 void push(struct stack_s **stack, unsigned int line_number);
 void pall(struct stack_s **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number)
 int isnumber(char *s);
 
 #endif /* MONTY_H */
