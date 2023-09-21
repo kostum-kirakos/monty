@@ -1,7 +1,7 @@
 #include "monty.h"
 
 instruction_t instructions[] = {
-	{"div", div},
+	{"div", _div},
 	{"sub", sub},
 	{"add", add},
 	{"swap", swap},
