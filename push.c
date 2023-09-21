@@ -10,6 +10,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node;
 	int value;
 	char *arg = strtok(NULL, " \t\n");
+	int check;
 
 	if (arg == NULL)
 	{
@@ -18,7 +19,9 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	value = atoi(arg);
-	if (value == 0 && arg[0] != '0' && arg[0] != '-')
+	check = isnumber(vaule);
+
+	if (check == -1)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
