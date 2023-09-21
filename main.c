@@ -8,6 +8,7 @@ instruction_t instructions[] = {
 	{"pall", pall},
 	{"pint", pint},
 	{"nop", nop},
+	{"sub", sub},
 	{NULL, NULL}};
 
 /**
