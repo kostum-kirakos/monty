@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
 	check_args_error(argc);
 	file_to_open = fopen(argv[1], "r");
-	check_openfile_erro(file_to_open, argv[1]);
+	check_openfile_error(file_to_open, argv[1]);
 	while (fgets(line, sizeof(line), file_to_open) != NULL)
 	{
 		line_number++;
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 		}
 		if (!find)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			fclose(file_to_open);
 			return (1); }
 	}
@@ -93,7 +93,7 @@ void check_args_error(int argc)
  * Return: Nothing.
  */
 
-void check_openfile_erro(FILE *file_to_open, char *argv)
+void check_openfile_error(FILE *file_to_open, char *argv)
 {
 	if (!file_to_open)
 	{

@@ -55,5 +55,7 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void check_args_error(int argc);
+void check_openfile_error(FILE *file_to_open, char *argv);
 
 #endif /* MONTY_H */
