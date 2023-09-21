@@ -19,7 +19,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	value = atoi(arg);
-	check = isnumber(vaule);
+	check = isnumber(arg);
 
 	if (check == -1)
 	{
