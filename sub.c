@@ -1,25 +1,23 @@
 #include "monty.h"
 
+
 /**
- * sub - Substract the top two elements of the stack.
- * @stack: Pointer to the stack.
- * @line_number: Line number in the Monty bytecode file.
+ * sub - Subtracts the top two elements of the stack.
+ * @stack: The stack.
+ * @line_number: Line number of the instruction.
  */
 
 void sub(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (!temp || !temp->next)
 	{
-	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-	exit(EXIT_FAILURE);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 
-	(*stack)->next->n = ((*stack)->n) - ((*stack)->next->n);
-	temp = *stack;
+	temp->next->n -= temp->n;
 	*stack = temp->next;
-	(*stack)->prev = NULL;
 	free(temp);
 }
-
