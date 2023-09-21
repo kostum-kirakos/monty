@@ -10,8 +10,7 @@
 
 void mul(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
-	int mul = 0;
+	stack_t *temp;
 
 	if (temp == NULL || temp->next == NULL)
 	{
@@ -19,8 +18,9 @@ void mul(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
+	temp = *stack;
 	*stack = (*stack)->next;
-	temp->next->n *= temp->n;
-	*stack = temp->next;
+	(*stack)->n *= temp->n;
+	(*stack)->prev = NULL;
 	free(temp);
 }
