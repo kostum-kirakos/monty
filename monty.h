@@ -48,5 +48,9 @@ void swap(stack_t **stack, unsigned int line_number);
 int isnumber(char *s);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+<<<<<<< HEAD
+=======
+void _div(stack_t **stack, unsigned int line_number);
+>>>>>>> 4514d42f1e98b973525ceb9d45afa5234b040a13
 
 #endif /* MONTY_H */
