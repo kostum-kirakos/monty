@@ -1,6 +1,8 @@
 #include "monty.h"
 
 instruction_t instructions[] = {
+	{"div", div},
+	{"sub", sub},
 	{"add", add},
 	{"swap", swap},
 	{"pop", pop},
@@ -8,8 +10,6 @@ instruction_t instructions[] = {
 	{"pall", pall},
 	{"pint", pint},
 	{"nop", nop},
-	{"div", div},
-	{"sub", sub},
 	{NULL, NULL}
 };
 
